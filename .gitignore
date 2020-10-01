@@ -1,0 +1,56 @@
+**/.env.d
+
+<<<<<<< HEAD
+#
+**/.env
+=======
+# DirEnv - Erweiterung
+.env
+!.env/config
+!.env/ssh-user
+>>>>>>> 489ec43b63d15b642d5224c69d179c0dab8e2df7
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+#
+/components.github
+
+# compiled output
+**/dist
+/tmp
+/out-tsc
+
+# dependencies
+**/node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
+App-Movies/node_modules
+**/.env.d
+**/.env
+

@@ -1,0 +1,42 @@
+<div class=".container" [class.is-mobile]="mobileQuery.matches" *ngIf="shouldRun">
+	<mat-toolbar color="primary" class="toolbar">
+		<mat-toolbar-row>
+			<button mat-icon-button (click)="snav.toggle()">
+				<mat-icon>menu</mat-icon>
+			</button>
+
+			<a mat-button routerLink="//home"> <b>Home</b></a>
+
+			<button mat-button [matMenuTriggerFor]="menuDemo">Demo</button>
+			<mat-menu #menuDemo="matMenu">
+				<button mat-menu-item routerLink="{{ page.url }}" *ngFor="let page of pagesDemo">{{ page.name }}</button>
+			</mat-menu>
+
+			<span class="toolbar-spacer"></span>
+
+			<mat-icon class="toolbar-icon" aria-hidden="false" aria-label="Favourite">favorite</mat-icon>
+			<mat-icon class="toolbar-icon" aria-hidden="false" aria-label="Delete">delete</mat-icon>
+
+			<button mat-icon-button [matMenuTriggerFor]="menu2" aria-label="Menu">
+				<mat-icon>more_vert</mat-icon>
+			</button>
+			<mat-menu #menu2="matMenu">
+				<button mat-menu-item><mat-icon>dialpad</mat-icon> <span>Redial</span></button>
+				<button mat-menu-item disabled><mat-icon>voicemail</mat-icon><span>Check voice mail</span></button>
+				<button mat-menu-item><mat-icon>notifications_off</mat-icon><span>Disable alerts</span></button>
+			</mat-menu>
+		</mat-toolbar-row>
+	</mat-toolbar>
+
+	<mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+		<mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+			<mat-nav-list>
+				<app-sidemenu></app-sidemenu>
+			</mat-nav-list>
+		</mat-sidenav>
+
+		<mat-sidenav-content>
+			<router-outlet></router-outlet>
+		</mat-sidenav-content>
+	</mat-sidenav-container>
+</div>

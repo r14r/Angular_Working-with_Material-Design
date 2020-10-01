@@ -1,0 +1,23 @@
+<button mat-button [matMenuTriggerFor]="menu1">Menu</button>
+<mat-menu #menu1="matMenu">
+	<button mat-menu-item>Home</button>
+	<button mat-menu-item>Demo</button>
+</mat-menu>
+
+<a mat-button routerLink="//home"> <b>Home</b></a>
+<a mat-button routerLink="/demo"> <b>Demo</b> </a>
+|
+
+<span class="toolbar-spacer"></span>
+
+<mat-icon class="toolbar-icon" aria-hidden="false" aria-label="Favourite">favorite</mat-icon>
+<mat-icon class="toolbar-icon" aria-hidden="false" aria-label="Delete">delete</mat-icon>
+
+<button mat-icon-button [matMenuTriggerFor]="menu2" aria-label="Menu">
+	<mat-icon>more_vert</mat-icon>
+</button>
+<mat-menu #menu2="matMenu">
+	<button mat-menu-item><mat-icon>dialpad</mat-icon> <span>Redial</span></button>
+	<button mat-menu-item disabled><mat-icon>voicemail</mat-icon><span>Check voice mail</span></button>
+	<button mat-menu-item><mat-icon>notifications_off</mat-icon><span>Disable alerts</span></button>
+</mat-menu>
